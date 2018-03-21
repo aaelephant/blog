@@ -1,0 +1,1 @@
+#ios某个tab中的子viewController支持横竖屏的话，上一个界面的viewController shouldAutorotate属性方法应该返回YES。
