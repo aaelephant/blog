@@ -6,13 +6,13 @@
 1. 下载 mysql-5.7.22-linux-glibc2.12-x86_64.tar.gz
 	本地下载后scp到云服务，wget 下载比较慢
 2. tar -axvf 解压
-3. 配置mysql bin路径到环境变量
+3. cp -r mysql-5.7.22-linux-glibc2.12-x86_64 /usr/local/mysql; 配置mysql bin路径到环境变量(不拷贝到/usr/local/下， bin/mysqld 初始化不成功)
 4. 添加开机启动  cp mysql-5.7.22-linux-glibc2.12-x86_64/support-files/mysql.server  /etc/init.d/mysqld
 	
 	修改   vim /etc/init.d/mysqld   
 	添加路径 在46行  
-	basedir=mysql-5.7.22-linux-glibc2.12-x86_64  
-	datadir=mysql-5.7.22-linux-glibc2.12-x86_64/data 
+	basedir=/usr/local/mysql  
+	datadir=/usr/local/mysqldata 
 5. 添加系统mysql组     groupadd mysql
 
 	添加mysql用户 useradd -r -g mysql mysql   （添加完成后可用id mysql查看）
