@@ -12,13 +12,13 @@
 	修改   vim /etc/init.d/mysqld   
 	添加路径 在46行  
 	basedir=/usr/local/mysql  
-	datadir=/usr/local/mysqldata 
+	datadir=/usr/local/mysql/data 
 5. 添加系统mysql组     groupadd mysql
 
 	添加mysql用户 useradd -r -g mysql mysql   （添加完成后可用id mysql查看）
 
 6. 修改当前目录拥有者为mysql用户  chown -R mysql:mysql ./
-7. 初始化数据库      bin/mysqld --initialize --user=mysql --basedir=/usr/local/mysql --datadir=/usr/local/mysql/data	
+7. 初始化数据库 (/user/local/mysql路径下)      bin/mysqld --initialize --user=mysql --basedir=/usr/local/mysql --datadir=/usr/local/mysql/data	
 	#### <a name="fenced-code-block">初始化log中会显示暂时为root设置的密码</a>
 8. 启动mysql
 
