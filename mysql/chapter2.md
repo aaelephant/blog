@@ -43,3 +43,16 @@ Starting MySQL.The server quit without updating PID file (/[失败]n/mysqld/mysq
 GRANT ALL PRIVILEGES ON *.* TO 'root1'@'%' IDENTIFIED BY 'root' WITH GRANT OPTION;   #授权新用户
 ```
 
+13.mac 卸载mysql
+brew remove mysql
+ 
+brew cleanup
+ 
+launchctl unload -w ~/Library/LaunchAgents/com.mysql.mysqld.plist
+ 
+rm ~/Library/LaunchAgents/com.mysql.mysqld.plist
+ 
+sudo rm -rf /usr/local/var/mysql
+确保mysql相关文件数据清空
+
+brew install mysql(相应版本)
